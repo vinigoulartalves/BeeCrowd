@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); //Faz o split nas quebras de linha
+
+var line1 = lines[0].split(' ') //Faz o split nos espaçamentos dos dados na linha
+var line2 = lines[1].split(' ')
+
+var qt1 = parseFloat(line1[1])
+var pc1 = parseFloat(line1[2])
+var qt2 = parseFloat(line2[1])
+var pc2 = parseFloat(line2[2])
+
+var total = qt1 * pc1 + qt2 * pc2
+
+console.log(`VALOR A PAGAR: R$ ${total.toFixed(2)}`)
+
+
+
+
+
+
+

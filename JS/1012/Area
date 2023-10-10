@@ -1,0 +1,24 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split(' '); 
+
+var a = parseFloat(lines[0])
+var b = parseFloat(lines[1])
+var c = parseFloat(lines[2])
+var pi = 3.14159
+
+var Atriangulo = (a * c) / 2
+var Acirculo = pi * c ** 2
+var Atrap = ((a + b)/ 2) * c
+var Aquad = b * b
+var Aret = a * b
+
+
+console.log(`TRIANGULO: ${Atriangulo.toFixed(3)}`)
+console.log(`CIRCULO: ${Acirculo.toFixed(3)}`)
+console.log(`TRAPEZIO: ${Atrap.toFixed(3)}`)
+console.log(`QUADRADO: ${Aquad.toFixed(3)}`)
+console.log(`RETANGULO: ${Aret.toFixed(3)}`)
+
+
+
+

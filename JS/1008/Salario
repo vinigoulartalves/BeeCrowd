@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n');
+
+var num = parseFloat(lines[0])
+var ht = parseFloat(lines[1])
+var vh = parseFloat(lines[2])
+
+var sal = ht * vh
+
+console.log(`NUMBER = ${num}`)
+console.log(`SALARY = U$ ${sal.toFixed(2)}`)

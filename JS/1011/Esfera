@@ -1,0 +1,9 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); //Faz o split nas quebras de linha
+
+var r = parseFloat(lines[0])
+var pi = 3.14159
+
+var Aesfera = (4 * pi * r ** 3) / 3
+
+console.log(`VOLUME = ${Aesfera.toFixed(3)}`)
