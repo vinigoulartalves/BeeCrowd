@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var valor = parseFloat(lines[0]) 
+
+function calcularNotas(valor) {
+    var notas = [100, 50, 20, 10, 5, 2, 1];
+    var resultado = {};
+
+    console.log(valor);
+
+    for (let nota of notas) {
+        const quantidade = Math.floor(valor / nota);
+        console.log(`${quantidade} nota(s) de R$ ${nota.toFixed(2).replace('.', ',')}`);
+        valor %= nota;
+    }       
+}
+
+calcularNotas(valor);
+
+

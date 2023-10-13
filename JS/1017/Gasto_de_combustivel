@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+// velocidade(km/h) = dist(km) / tempo (h)
+// consumo (km/l) = dist(km) / litro (l)
+
+var temp = parseFloat(lines[0])
+var vel = parseFloat(lines[1])
+var cons = 12
+var dist = temp * vel
+var litros = dist / cons
+
+
+console.log(litros.toFixed(3))
