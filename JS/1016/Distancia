@@ -1,0 +1,9 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+// Tempo(min) = Distância(km) / Taxa(km/min)
+
+var dist = parseFloat(lines[0])
+var tempo = dist / 0.5  // Onde a taxa é 1km a cada 2s  
+
+console.log(`${tempo} minutos`)
