@@ -1,0 +1,37 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var linha1 = lines[0].split(' ')
+var linha2 = lines[1].split(' ')
+
+var n1 = parseFloat(linha1[0])
+var n2 = parseFloat(linha1[1])
+var n3 = parseFloat(linha1[2])
+var n4 = parseFloat(linha1[3])
+var rec = parseFloat(linha2[0])
+
+var media1 = (n1*2 + n2*3 + n3*4 + n4*1)/10
+var media2 = (media1+rec) / 2
+
+if (media1 >= 7.0) {
+    console.log(`Media: ${media1.toFixed(1)}`)
+    console.log(`Aluno aprovado.`)
+}
+else if (media1 < 7.0 && media1 >= 5.0) {
+
+    var conferencia = media2 >= 5.0 ? 'Aluno aprovado.' : 'Aluno reprovado.'
+
+    console.log(`Media: ${media1.toFixed(1)}`)
+    console.log(`Aluno em exame.`)
+    console.log(`Nota do exame: ${rec.toFixed(1)}`)
+    console.log(conferencia)
+    console.log(`Media final: ${media2.toFixed(1)}`)
+}
+else if (media1 < 5) {
+    console.log(`Media: ${media1.toFixed(1)}`)
+    console.log(`Aluno reprovado.`)
+}
+
+
+
+
