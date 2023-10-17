@@ -1,0 +1,44 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var DinTot = parseFloat(lines[0])
+
+function DinDec(DinTot) {
+    var N100 = Math.floor(DinTot/100)
+    var N50 = Math.floor((DinTot%100)/50)
+    var N20 = Math.floor(((DinTot%100)%50)/20)
+    var N10 = Math.floor((((DinTot%100)%50)%20)/10)
+    var N5 = Math.floor(((((DinTot%100)%50)%20)%10)/5)
+    var N2 = Math.floor((((((DinTot%100)%50)%20)%10)%5)/2)
+
+    var Rmoedas = ((((((DinTot%100)%50)%20)%10)%5)%2).toFixed(2)
+
+    var M1 = Math.floor(Rmoedas/1)
+    var M050 = Math.floor((Rmoedas%1)/0.5)
+    var M025 = Math.floor((((Rmoedas%1)%0.5))/0.25)
+    var M010 = Math.floor(((((Rmoedas%1)%0.5))%0.25)/0.1)
+    var M005 = Math.floor((((((Rmoedas%1)%0.5))%0.25)%0.1)/0.05)
+    var M001 = Math.round(((((((Rmoedas%1)%0.5))%0.25)%0.1)%0.05)/0.01)
+
+    
+
+
+    console.log(`NOTAS:`)
+    console.log(`${N100} nota(s) de R$ 100.00`)
+    console.log(`${N50} nota(s) de R$ 50.00`)
+    console.log(`${N20} nota(s) de R$ 20.00`)
+    console.log(`${N10} nota(s) de R$ 10.00`)
+    console.log(`${N5} nota(s) de R$ 5.00`)
+    console.log(`${N2} nota(s) de R$ 2.00`)
+    console.log(`MOEDAS:`)
+    console.log(`${M1} moeda(s) de R$ 1.00`)
+    console.log(`${M050} moeda(s) de R$ 0.50`)
+    console.log(`${M025} moeda(s) de R$ 0.25`)
+    console.log(`${M010} moeda(s) de R$ 0.10`)
+    console.log(`${M005} moeda(s) de R$ 0.05`)
+    console.log(`${M001} moeda(s) de R$ 0.01`)
+
+
+}
+
+DinDec(DinTot)

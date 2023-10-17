@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var tempoS = parseInt(lines[0]);
+
+function converterTempo(tempoS) {
+    var horas = Math.floor(tempoS / 3600);
+    var minutos = Math.floor((tempoS % 3600) / 60);
+    var segundos = Math.floor((tempoS % 3600) % 60);
+
+    console.log(`${horas}:${minutos}:${segundos}`);
+}
+
+converterTempo(tempoS);

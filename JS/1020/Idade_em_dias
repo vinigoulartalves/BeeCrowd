@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var Dias = parseInt(lines[0]);
+
+function converterDias(Dias) { 
+    var anos = Math.floor(Dias / 365)
+    var meses = Math.floor((Dias % 365) / 30)
+    var dias = Math.floor((Dias % 365) % 30)
+    
+    console.log(`${anos} ano(s)`)
+    console.log(`${meses} mes(es)`)
+    console.log(`${dias} dia(s)`)
+}
+
+converterDias(Dias)

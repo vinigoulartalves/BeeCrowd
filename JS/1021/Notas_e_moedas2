@@ -1,0 +1,32 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split('\n'); 
+
+var DinTot = parseFloat(lines[0])
+
+function calcularNotasEMoedas(DinTot) {
+    var notas = [100, 50, 20, 10, 5, 2];
+    var moedas = [1, 0.5, 0.25, 0.1, 0.05, 0.01];
+  
+    console.log("NOTAS:");
+    for (var nota of notas) {
+      var quantidadeNotas = Math.floor(DinTot / nota);
+      console.log(`${quantidadeNotas} nota(s) de R$ ${nota.toFixed(2)}`);
+      DinTot %= nota;
+    }
+  
+    console.log("MOEDAS:");
+    for (var moeda of moedas) {
+      var quantidadeMoedas = Math.floor(DinTot / moeda);
+      console.log(`${quantidadeMoedas} moeda(s) de R$ ${moeda.toFixed(2)}`);
+      DinTot = (DinTot % moeda).toFixed(2);
+    }
+  }
+  
+  calcularNotasEMoedas(DinTot);
+ 
+  
+  
+  
+  
+  
+  
