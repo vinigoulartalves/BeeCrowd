@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split(' '); 
+
+var a = parseFloat(lines[0])
+var b = parseFloat(lines[1])
+var c = parseFloat(lines[2])
+
+function verTrian () {
+    if (a+b>c && a+c>b && b+c>a) {
+        
+        var perimetro = a+b+c
+        console.log(`Perimetro = ${perimetro.toFixed(1)}`)
+    }
+    else {
+        var area = ((a+b)/2)*c
+        console.log(`Area = ${area.toFixed(1)}`)
+    }
+}
+verTrian()

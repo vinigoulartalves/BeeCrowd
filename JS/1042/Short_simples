@@ -1,0 +1,33 @@
+var input = require('fs').readFileSync('stdin', 'utf8');
+var lines = input.split(' '); 
+
+var x = parseFloat(lines[0])
+var y = parseFloat(lines[1])
+var z = parseFloat(lines[2])
+
+var a = x
+var b = y
+var c = z
+var temp
+
+function ordem() {
+    if (a>b) {
+        temp = a
+        a = b
+        b = temp
+    }
+    if (a>c) {
+        temp = a
+        a = c
+        c = temp
+    }
+    if (b>c) {
+        temp = b
+        b = c
+        c = temp
+    }
+    console.log(a+ '\n' + b + '\n' + c + '\n\n' + x + '\n' + y + '\n' + z)
+    
+} 
+
+ordem()
